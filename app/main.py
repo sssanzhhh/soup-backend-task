@@ -1,7 +1,7 @@
 
 import uuid
 
-from fastapi import FastAPI, Depends, HTTPException
+from fastapi import FastAPI, Depends, HTTPException, Query
 from pydantic import BaseModel, Field
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
@@ -77,4 +77,33 @@ def get_job(job_id: uuid.UUID, db: Session = Depends(get_db)):
         "status": job.status,
         "payload": job.payload,
         "attempt_count": job.attempt_count
+    }
+
+
+@app.get("/jobs")
+def list_jobs(
+    limit: int = Query(default=10, ge=1, le=100),
+    offset: int = Query(default=0, ge=0),
+    db: Session = Depends(get_db)
+):
+    jobs = (
+        db.query(Job)
+        .order_by(Job.created_at.asc(), Job.id.asc())
+        .offset(offset)
+        .limit(limit)
+        .all()
+    )
+
+    return {
+        "items": [
+            {
+                "id": str(job.id),
+                "status": job.status,
+                "payload": job.payload,
+                "attempt_count": job.attempt_count
+            }
+            for job in jobs
+        ],
+        "limit": limit,
+        "offset": offset
     }
