@@ -61,3 +61,20 @@ def create_job(data: JobCreate, db: Session = Depends(get_db)):
         "status": job.status,
         "message": "Job created"
     }
+
+@app.get("/jobs/{job_id}")
+def get_job(job_id: uuid.UUID, db: Session = Depends(get_db)):
+    job = db.get(Job, job_id)
+
+    if job is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Job not found"
+        )
+
+    return {
+        "id": str(job.id),
+        "status": job.status,
+        "payload": job.payload,
+        "attempt_count": job.attempt_count
+    }
