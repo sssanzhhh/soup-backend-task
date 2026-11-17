@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/sssqwead/soup-backend/tests/chaos_test.py", line 245, in <module>
+    threading.Thread(target=run_checked, args=(send_requests,)),
+                                               ^^^^^^^^^^^^^
+NameError: name 'send_requests' is not defined
