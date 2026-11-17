@@ -107,3 +107,29 @@ def list_jobs(
         "limit": limit,
         "offset": offset
     }
+
+@app.post("/jobs/{job_id}/cancel")
+def cancel_job(job_id: uuid.UUID, db: Session = Depends(get_db)):
+    with db.begin():
+        job = (
+            db.query(Job)
+            .filter(Job.id == job_id)
+            .with_for_update()
+            .first()
+        )
+
+        if job is None:
+            raise HTTPException(
+                status_code=404,
+                detail="Job not found"
+            )
+
+        if job.status in ("queued", "running"):
+            job.status = "cancelled"
+            job.worker_id = None
+            job.lease_until = None
+
+        return {
+            "id": str(job.id),
+            "status": job.status
+        }

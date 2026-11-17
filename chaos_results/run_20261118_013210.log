@@ -1,0 +1,72 @@
+Created 10000 jobs
+Batch: 0a1b74e9-1f5a-4441-ab13-e717ab9b3f11
+Starting chaos test...
+Batch: 0a1b74e9-1f5a-4441-ab13-e717ab9b3f11
+Started 8 workers
+Killed worker PID=80446
+Restarted worker PID=80466
+Killed worker PID=80442
+Restarted worker PID=80473
+Killed worker PID=80444
+Restarted worker PID=80484
+Killed worker PID=80443
+Restarted worker PID=80492
+Killed worker PID=80484
+Restarted worker PID=80499
+Killed worker PID=80473
+Restarted worker PID=80511
+Killed worker PID=80440
+Restarted worker PID=80519
+Killed worker PID=80445
+Restarted worker PID=80528
+Killed worker PID=80492
+Restarted worker PID=80538
+Killed worker PID=80466
+Restarted worker PID=80545
+Killed worker PID=80519
+Restarted worker PID=80558
+Killed worker PID=80528
+Restarted worker PID=80565
+Killed worker PID=80538
+Restarted worker PID=80574
+Killed worker PID=80439
+Restarted worker PID=80581
+Killed worker PID=80581
+Restarted worker PID=80588
+Killed worker PID=80588
+Restarted worker PID=80603
+Killed worker PID=80558
+Restarted worker PID=80619
+Killed worker PID=80441
+Restarted worker PID=80628
+Killed worker PID=80574
+Restarted worker PID=80635
+Killed worker PID=80628
+Restarted worker PID=80636
+Killed worker PID=80565
+Restarted worker PID=80648
+Killed worker PID=80499
+Restarted worker PID=80655
+Killed worker PID=80511
+Restarted worker PID=80666
+Killed worker PID=80666
+Restarted worker PID=80673
+Killed worker PID=80636
+Restarted worker PID=80680
+Killed worker PID=80673
+Restarted worker PID=80692
+Killed worker PID=80680
+Restarted worker PID=80699
+Killed worker PID=80699
+Restarted worker PID=80708
+Killed worker PID=80655
+Restarted worker PID=80720
+Killed worker PID=80603
+Restarted worker PID=80727
+All chaos workers stopped
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/sssqwead/soup-backend/tests/chaos_test.py", line 281, in <module>
+    raise RuntimeError(f"API chaos failed: {api_errors}")
+RuntimeError: API chaos failed: [NameError("name 'cancel_jobs' is not defined")]
