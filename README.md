@@ -111,3 +111,33 @@ Worker execution itself may be repeated after lease expiry or process terminatio
 The project is a take-home implementation, not a production-ready distributed job platform.
 
 A sustained 100 RPS benchmark has not been demonstrated. Production deployment would require further performance validation and operational hardening.
+
+## Ship / Don't Ship Decision
+
+**Decision: DON'T SHIP at 100 RPS yet.**
+
+The implementation passed 13 automated tests and demonstrated recovery under chaos testing with 10,000 jobs and eight workers.
+
+However, these results do not establish sustained performance at 100 requests per second. The system has not been benchmarked at that request rate.
+
+**First fix:** Add a repeatable 100 RPS load test and measure API latency, error rate, job completion rate, and database contention.
+
+The system should only be considered for production deployment after performance validation and further operational review.
+
+## Reflection
+
+The most important lesson from this task was that reliable background processing requires more than retrying failed jobs. PostgreSQL locking, leases, fencing tokens, and transactional side effects help protect the system against concurrent workers and unexpected process termination.
+
+Chaos testing also showed why checking final database invariants is more valuable than simply checking whether worker processes remain alive.
+
+## AI Disclosure
+
+AI tools were used to support implementation planning, debugging, test design, and documentation.
+
+I accepted suggestions involving FastAPI endpoint structure, PostgreSQL row-level locking with `SKIP LOCKED`, lease-based worker recovery, fencing tokens, and transactional side effects.
+
+I verified the implementation locally through automated tests and chaos-test runs. The test suite passed 13 tests, and two recorded chaos runs passed the final state invariants.
+
+During development, some chaos-harness runs failed because of missing function definitions. I corrected the harness and repeated the tests while preserving the failed logs.
+
+AI-generated suggestions were reviewed and adjusted based on observed behavior rather than accepted as proof of correctness. The system has not been validated at a sustained 100 RPS, so my final decision remains DON'T SHIP.
