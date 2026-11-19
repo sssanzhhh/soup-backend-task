@@ -92,6 +92,23 @@ Run the chaos test only against an isolated test environment. It modifies databa
 
 Previously captured raw execution logs, including failed attempts, are preserved in `chaos_results/`.
 
+### Recorded Chaos Runs
+
+Six execution logs were preserved:
+
+- `run_20261118_010339.log` — 10,000 jobs succeeded with zero duplicate effects; no explicit final invariant PASS was recorded.
+- `run_20261118_012001.log` — final state invariants PASS.
+- `run_20261118_012626.log` — command typo (`ython`); the harness did not start.
+- `run_20261118_012648.log` — harness failed because `send_requests` was undefined.
+- `run_20261118_013210.log` — harness failed because `cancel_jobs` was undefined.
+- `run_20261118_014226.log` — final state invariants PASS.
+
+Two runs explicitly passed all final state invariants. The failed attempts remain available for review.
+
+### Chaos Harness Limitations
+
+The harness tests a finite set of worker crashes, concurrent requests, cancellations, and database invariants. It does not establish sustained 100 RPS performance, production-scale resource usage, or correctness of arbitrary external side effects. It also does not exhaustively cover every possible concurrency interleaving.
+
 ## Reliability Scope
 
 The implementation targets database-backed at-most-once effects per job through a unique job-effect constraint and transactional completion.
