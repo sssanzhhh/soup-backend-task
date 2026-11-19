@@ -1,0 +1,180 @@
+Created 10000 jobs
+Batch: 68093b56-230b-4800-b9c1-39ca693f9b4a
+Starting chaos test...
+Batch: 68093b56-230b-4800-b9c1-39ca693f9b4a
+Started 8 workers
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+POST idempotency: PASS
+POST idempotency: PASS
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+Concurrent idempotency: PASS
+API chaos: PASS
+Killed worker PID=83874
+Restarted worker PID=83895
+Killed worker PID=83873
+Restarted worker PID=83907
+Killed worker PID=83877
+Restarted worker PID=83920
+Killed worker PID=83878
+Restarted worker PID=83928
+Killed worker PID=83879
+Restarted worker PID=83937
+Killed worker PID=83875
+Restarted worker PID=83944
+Killed worker PID=83928
+Restarted worker PID=83951
+Killed worker PID=83895
+Restarted worker PID=83965
+Killed worker PID=83920
+Restarted worker PID=83973
+Killed worker PID=83973
+Restarted worker PID=83982
+Killed worker PID=83965
+Restarted worker PID=83989
+Killed worker PID=83982
+Restarted worker PID=83998
+Killed worker PID=83998
+Restarted worker PID=84008
+Killed worker PID=83880
+Restarted worker PID=84015
+Killed worker PID=83907
+Restarted worker PID=84024
+Killed worker PID=83937
+Restarted worker PID=84031
+Killed worker PID=84008
+Restarted worker PID=84040
+Killed worker PID=84015
+Restarted worker PID=84050
+Killed worker PID=83876
+Restarted worker PID=84057
+Killed worker PID=83951
+Restarted worker PID=84066
+Killed worker PID=84031
+Restarted worker PID=84073
+Killed worker PID=83944
+Restarted worker PID=84082
+Killed worker PID=84040
+Restarted worker PID=84092
+Killed worker PID=84073
+Restarted worker PID=84099
+Killed worker PID=84082
+Restarted worker PID=84111
+Killed worker PID=84024
+Restarted worker PID=84124
+Killed worker PID=84099
+Restarted worker PID=84134
+Killed worker PID=84092
+Restarted worker PID=84146
+Killed worker PID=84066
+Restarted worker PID=84172
+Killed worker PID=84111
+Restarted worker PID=84182
+All chaos workers stopped
+Recovering unfinished jobs...
+Started 8 workers
+Remaining jobs: 0
+Recovery workers stopped
+
+=== CHAOS TEST RESULTS ===
+cancelled: jobs=100, effects=0
+succeeded: jobs=9900, effects=9900
+Duplicate effects: 0
+Final state invariants: PASS

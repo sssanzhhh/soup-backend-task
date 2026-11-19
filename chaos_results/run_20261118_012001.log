@@ -1,0 +1,216 @@
+Created 10000 jobs
+Batch: 2bbee58a-ec72-4c63-80b1-aaad150f446c
+Starting chaos test...
+Batch: 2bbee58a-ec72-4c63-80b1-aaad150f446c
+Started 8 workers
+CANCEL: 200
+POST: 201
+POST: 201
+CANCEL: 200
+POST: 201
+POST: 201
+CANCEL: 200
+POST: 201
+POST: 201
+CANCEL: 200
+POST: 201
+POST: 201
+CANCEL: 200
+POST: 201
+POST: 201
+CANCEL: 200
+POST: 201
+CANCEL: 200
+POST: 201
+POST: 201
+CANCEL: 200
+POST: 201
+CANCEL: 200
+POST: 201
+POST: 201
+CANCEL: 200
+POST: 201
+POST: 201
+CANCEL: 200
+POST: 201
+POST: 201
+CANCEL: 200
+POST: 201
+POST: 201
+CANCEL: 200
+POST: 201
+POST: 201
+CANCEL: 200
+POST: 201
+POST: 201
+CANCEL: 200
+POST: 201
+CANCEL: 200
+POST: 201
+CANCEL: 200
+POST: 201
+POST: 201
+CANCEL: 200
+POST: 201
+POST: 201
+CANCEL: 200
+POST: 201
+POST: 201
+CANCEL: 200
+POST: 201
+POST: 201
+CANCEL: 200
+POST: 201
+POST: 201
+CANCEL: 200
+POST: 201
+CANCEL: 200
+POST: 201
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+CANCEL: 200
+Killed worker PID=76457
+Restarted worker PID=76472
+Killed worker PID=76459
+Restarted worker PID=76479
+Killed worker PID=76455
+Restarted worker PID=76486
+Killed worker PID=76460
+Restarted worker PID=76497
+Killed worker PID=76453
+Restarted worker PID=76507
+Killed worker PID=76486
+Restarted worker PID=76518
+Killed worker PID=76497
+Restarted worker PID=76525
+Killed worker PID=76458
+Restarted worker PID=76532
+Killed worker PID=76454
+Restarted worker PID=76546
+Killed worker PID=76507
+Restarted worker PID=76578
+Killed worker PID=76472
+Restarted worker PID=76591
+Killed worker PID=76591
+Restarted worker PID=76598
+Killed worker PID=76479
+Restarted worker PID=76605
+Killed worker PID=76598
+Restarted worker PID=76615
+Killed worker PID=76525
+Restarted worker PID=76625
+Killed worker PID=76532
+Restarted worker PID=76639
+Killed worker PID=76518
+Restarted worker PID=76646
+Killed worker PID=76639
+Restarted worker PID=76653
+Killed worker PID=76625
+Restarted worker PID=76662
+Killed worker PID=76615
+Restarted worker PID=76672
+Killed worker PID=76646
+Restarted worker PID=76684
+Killed worker PID=76662
+Restarted worker PID=76695
+Killed worker PID=76653
+Restarted worker PID=76702
+Killed worker PID=76578
+Restarted worker PID=76711
+Killed worker PID=76672
+Restarted worker PID=76721
+Killed worker PID=76702
+Restarted worker PID=76730
+Killed worker PID=76695
+Restarted worker PID=76737
+Killed worker PID=76711
+Restarted worker PID=76744
+Killed worker PID=76456
+Restarted worker PID=76753
+Killed worker PID=76753
+Restarted worker PID=76763
+All chaos workers stopped
+Recovering unfinished jobs...
+Started 8 workers
+Remaining jobs: 0
+Recovery workers stopped
+
+=== CHAOS TEST RESULTS ===
+cancelled: jobs=100, effects=0
+succeeded: jobs=9900, effects=9900
+Duplicate effects: 0
+Final state invariants: PASS

@@ -1,7 +1,7 @@
 
 import uuid
 
-from fastapi import FastAPI, Depends, HTTPException
+from fastapi import FastAPI, Depends, HTTPException, Query
 from pydantic import BaseModel, Field
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
@@ -61,3 +61,75 @@ def create_job(data: JobCreate, db: Session = Depends(get_db)):
         "status": job.status,
         "message": "Job created"
     }
+
+@app.get("/jobs/{job_id}")
+def get_job(job_id: uuid.UUID, db: Session = Depends(get_db)):
+    job = db.get(Job, job_id)
+
+    if job is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Job not found"
+        )
+
+    return {
+        "id": str(job.id),
+        "status": job.status,
+        "payload": job.payload,
+        "attempt_count": job.attempt_count
+    }
+
+
+@app.get("/jobs")
+def list_jobs(
+    limit: int = Query(default=10, ge=1, le=100),
+    offset: int = Query(default=0, ge=0),
+    db: Session = Depends(get_db)
+):
+    jobs = (
+        db.query(Job)
+        .order_by(Job.created_at.asc(), Job.id.asc())
+        .offset(offset)
+        .limit(limit)
+        .all()
+    )
+
+    return {
+        "items": [
+            {
+                "id": str(job.id),
+                "status": job.status,
+                "payload": job.payload,
+                "attempt_count": job.attempt_count
+            }
+            for job in jobs
+        ],
+        "limit": limit,
+        "offset": offset
+    }
+
+@app.post("/jobs/{job_id}/cancel")
+def cancel_job(job_id: uuid.UUID, db: Session = Depends(get_db)):
+    with db.begin():
+        job = (
+            db.query(Job)
+            .filter(Job.id == job_id)
+            .with_for_update()
+            .first()
+        )
+
+        if job is None:
+            raise HTTPException(
+                status_code=404,
+                detail="Job not found"
+            )
+
+        if job.status in ("queued", "running"):
+            job.status = "cancelled"
+            job.worker_id = None
+            job.lease_until = None
+
+        return {
+            "id": str(job.id),
+            "status": job.status
+        }
